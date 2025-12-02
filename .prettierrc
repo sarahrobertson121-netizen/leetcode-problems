@@ -1,9 +1,12 @@
-module.exports = {
-  plugins: ["prettier-plugin-embed", "prettier-plugin-sql"],
-  embeddedSqlComments: ["sql"],
-  embeddedSqlTags: ["sql"],
-  language: "postgresql",
-  keywordCase: "upper",
-  // …other SQL plugin options
-};
-
+{
+  "plugins": ["prettier-plugin-sql"],
+  "overrides": [
+    {
+      "files": "*.sql",
+      "options": {
+        "parser": "sql",
+        "language": "postgresql" 
+      }
+    }
+  ]
+}
